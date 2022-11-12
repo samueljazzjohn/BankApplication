@@ -1,0 +1,24 @@
+<template tag-name="signup-screen">
+    <lyte-messagebox id="msg" lt-prop-duration-="1000"></lyte-messagebox>
+    <div class="lyte-container-fluid signup-screen-container">
+        <div class="signup-container">
+            <h1>SIGNUP</h1>
+            <%if(errors.username){%>
+                <span> Please enter valid username </span>
+                <%}%>
+            <form class="form-container" onsubmit="{{action('signup',event,this)}}">
+                <lyte-input lt-prop-appearance = 'box' lt-prop-style = "border-radius: 5px;" lt-prop-direction = 'vertical' lt-prop-placeholder = "Enter Your Name" lt-prop-type = 'text'  value="{{lbind(sname)}}"> </lyte-input>
+                <lyte-input lt-prop-appearance = 'box' lt-prop-style = "border-radius: 5px;" lt-prop-direction = 'vertical' lt-prop-placeholder = "Enter email" lt-prop-type = 'text'  value="{{lbind(semail)}}"> </lyte-input>
+                <lyte-input lt-prop-appearance = 'box' lt-prop-style = "border-radius: 5px;" lt-prop-direction = 'vertical' lt-prop-placeholder = "Enter Phone Number" lt-prop-type = 'text'  value="{{lbind(sphone)}}"> </lyte-input>
+                <lyte-input lt-prop-appearance = 'box' lt-prop-style = "border-radius: 5px;" llt-prop-direction = 'vertical' lt-prop-placeholder = "Enter Password" lt-prop-type = 'password'  value="{{lbind(password)}}"> </lyte-input>
+                <lyte-input lt-prop-appearance = 'box' lt-prop-style = "border-radius: 5px;" llt-prop-direction = 'vertical' lt-prop-placeholder = "Confirm  Password" lt-prop-type = 'password'  value="{{lbind(password)}}"> </lyte-input>
+                <lyte-button lt-prop-size="large" lt-prop-type="submit" lt-prop-color="black"
+					lt-prop-background-color="#969ca1" class="welcome-button-container">
+					<template is="registerYield" yield-name="text" class="button-text">
+						SIGN UP
+					</template>
+				</lyte-button>
+            </form>
+        </div>
+    </div>
+</template>

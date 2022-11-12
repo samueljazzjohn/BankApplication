@@ -1,0 +1,29 @@
+.signup-screen-container{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1{
+    margin-top: 5em;
+    text-align: center;
+}
+
+.form-container{
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+lyte-input,lyte-button{
+    color: white;
+    margin-top: 1em;
+    justify-self: center;
+}
+
+lyte-button{
+    margin-top: 0.5em;
+    align-self: center;
+}

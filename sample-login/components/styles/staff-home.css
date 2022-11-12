@@ -1,0 +1,103 @@
+.staff-home-screen{
+    display: flex;
+    flex-direction: column;
+}
+
+/* lyte-button{
+    color: white;
+    margin-top: 0.5em;
+    justify-self: center;
+    width: 5em;
+    height: 2.5em;
+} */
+
+.staff-body-container{
+    padding:2.5em ;
+}
+.staff-page-first{
+    display: flex;
+    flex-direction: row;
+}
+
+.staff-customer-section{
+    padding: 2.5em;
+    margin: 1em;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #6a6abf;
+    border-radius: 10px;
+}
+
+.staff-info{
+    padding: 2.5em;
+    margin: 1em;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #206965;
+    border-radius: 10px;
+}
+
+.header{
+    font-size: 25px;
+    font-weight: 800;
+    color: white;
+}
+
+.button{
+    margin-top: 1em;
+}
+
+.label{
+    color: #dedede;
+}
+
+.list-users{
+    margin: 1em;
+    list-style-type: none;
+}
+
+.second-header p{
+    color: #6a6abf !important;
+    margin-bottom: 1em;
+}
+
+ul,li{
+    margin: 1em;
+    color: white;
+}
+
+.user-banner{
+    margin: 1em;
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    background-color: #6a6abf;
+    border-radius: 10px;
+}
+
+.avatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.badge{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(0 216 0);
+    transform: translate(-0.5em,2.3em);
+}
+
+.badge-offline{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(255 14 38);
+    transform: translate(-0.5em,2.3em);
+}

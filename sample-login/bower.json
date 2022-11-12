@@ -1,0 +1,17 @@
+{
+  "name": "lyte-sample-login",
+  "description": "CLIENT FRAMEWORK WITH COMPONENTS,ROUTER AND DATA LAYER",
+  "main": "testing.html",
+  "authors": [
+    "subramanian.chidambara <subramanian.chidambara@zohocorp.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "pretender": "^1.4.2",
+    "lyte": "http://build/zoho/lyte/milestones/master/LYTE_V2_0_4/Lyte.zip",
+    "ui-components": "http://build/zoho/lyte_ui_component/milestones/master/LYTE_UI_COMPONENTS_M4/Lyte_ui_component.zip",
+    "lyte-dom":"http://build/zoho/lyte_dom/milestones/master/LYTE_DOM_V2_0_4/Lyte_Dom.zip"
+  }
+}

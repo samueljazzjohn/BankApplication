@@ -1,0 +1,119 @@
+<template tag-name="staff-home">
+    <lyte-messagebox id="msg" lt-prop-duration-="1000"></lyte-messagebox>
+    <lyte-modal id="add-customer">
+        <template is="registerYield" yield-name="modal">
+            <lyte-modal-header> Add Customer</lyte-modal-header>
+
+            <form onsubmit="{{action('addCustomer',event)}}">
+                <lyte-modal-content>
+                    <table cellpadding="0" cellspacing="0" class="w100per modalTable">
+                        <tbody>
+                            <tr>
+                                <td class="pB10 pR30 alignRight"> Enter Your Name : &nbsp; &nbsp; &nbsp; &nbsp; </td>
+                                <td class="pB10 mymodalinput">
+                                    <lyte-input name="accountNumber" lt-prop-type="text"
+                                        lt-prop-value="{{account[0].accountNumber}}" lt-prop-appearance="box"
+                                        lt-prop-style="border-radius: 5px;"> </lyte-input>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="pB10 pR30 alignRight"> Enter Email : </td>
+                                <td class="pB10 mymodalinput">
+                                    <lyte-input name="amount" lt-prop-type="email" lt-prop-value=""
+                                        lt-prop-appearance="box" lt-prop-style="border-radius: 5px;"> </lyte-input>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="pB10 pR30 alignRight"> Enter Phone Number : </td>
+                                <td class="pB10 mymodalinput">
+                                    <lyte-input name="amount" lt-prop-type="test" lt-prop-value=""
+                                        lt-prop-appearance="box" lt-prop-style="border-radius: 5px;"> </lyte-input>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="pB10 pR30 alignRight"> Enter Password : </td>
+                                <td class="pB10 mymodalinput">
+                                    <lyte-input name="amount" lt-prop-type='password' lt-prop-value=""
+                                        lt-prop-appearance="box" lt-prop-style="border-radius: 5px;"> </lyte-input>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </lyte-modal-content>
+                <lyte-modal-footer class="right">
+                    <lyte-button lt-prop-appearance="primary" lt-prop-type="submit">
+                        <template is="registerYield" yield-name="text"> Add </template>
+                    </lyte-button>
+                    <lyte-button onclick="{{action('closeCustomerModel')}}">
+                        <template is="registerYield" yield-name="text"> Cancel </template>
+                    </lyte-button>
+                </lyte-modal-footer>
+            </form>
+        </template>
+    </lyte-modal>
+
+    <div class="home-screen-navbar">
+        <div class="left-content">
+            <div class="banner-container">
+                <span class="banner">BANK</span> <span class="banner-second">APP</span>
+            </div>
+        </div>
+        <div class="right-content">
+            <lyte-button class="logout-button" onclick="{{action('logout',event)}}" lt-prop-size="large"
+                lt-prop-type="submit" lt-prop-color="white" lt-prop-background-color="#6a6abf"
+                class="welcome-button-container">
+                <template is="registerYield" yield-name="text">
+                    Logout
+                </template>
+            </lyte-button>
+        </div>
+    </div>
+
+
+    <!-- <h1>Staff Home {{ users[0].user_id }} </h1> -->
+    <div class="staff-body-container">
+        <div class="staff-page-first">
+            <div class="staff-customer-section">
+                <div class="header">Add New Customer</div>
+                <div class="button">
+                    <lyte-button lt-prop-size="large" onclick="{{action('openCustomerModel',event)}}"
+                        lt-prop-type="submit" lt-prop-color="black" lt-prop-background-color="#dedede"
+                        class="welcome-button-container">
+                        <template is="registerYield" yield-name="text" class="button-text">
+                            AddCustomer
+                        </template>
+                    </lyte-button>
+                </div>
+            </div>
+            <div class="staff-info">
+                <div class="header">Staff information</div>
+                <div class="label"> Name :{{staff.staffName}} </div>
+                <div class="label">Email : {{users[0].email}}</div>
+                <div class="label">Phone : {{staff.staffPhone}}</div>
+
+            </div>
+        </div>
+        <div class="customer-page-second">
+            <div class="second-header">
+                <p>LoggedIn Users</p>
+            </div>
+            <div class="second-content">
+                <ul>
+                    <% customers.forEach(function(item, index){ %>
+                        <div class="user-banner">
+                            <img class="avatar" src="http://netgon.ru/themeforest/arion_html/img/content/humans/item-4.jpg" alt="">
+                            <% if(item.user.status=="ONLINE") { %>
+                                <div class="badge"></div>
+                            <% } else { %>
+                                <div class="badge-offline"></div>
+                            <% } %>
+                            <div class="list-users">{{item.customerName}}</div>
+                        </div>
+                   <% },{"unbound" : true}) %>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</template>

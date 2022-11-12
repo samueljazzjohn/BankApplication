@@ -1,0 +1,17 @@
+<template tag-name="sample-home">
+    <div class="lyte-container-fluid staff-home-screen">
+        <h1>Welcome </h1>
+        <lyte-button lt-prop-size="large" onclick="{{action('addCustomer',event)}}" lt-prop-type="submit" lt-prop-color="black" lt-prop-background-color="#969ca1"
+            class="welcome-button-container">
+            <template is="registerYield" yield-name="text" class="button-text">
+                Add Customer
+            </template>
+        </lyte-button>
+        <lyte-button lt-prop-size="large" onclick="{{action('logout',event)}}" lt-prop-type="submit" lt-prop-color="black" lt-prop-background-color="#969ca1"
+            class="welcome-button-container">
+            <template is="registerYield" yield-name="text" class="button-text">
+                Logout
+            </template>
+        </lyte-button>
+    </div>
+</template>

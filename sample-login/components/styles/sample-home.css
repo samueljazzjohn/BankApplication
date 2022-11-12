@@ -1,0 +1,17 @@
+.staff-home-screen{
+    display: flex;
+    flex-direction: column;
+}
+
+yte-button{
+    color: white;
+    margin-top: 0.5em;
+    justify-self: center;
+    width: 5em;
+    height: 2.5em;
+}
+/* 
+lyte-button{
+    margin-top: 0.5em;
+    align-self: center;
+} */

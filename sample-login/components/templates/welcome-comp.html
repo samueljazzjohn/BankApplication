@@ -1,0 +1,50 @@
+<template tag-name='welcome-comp'>
+	<div class="lyte-container-fluid" id="sample_login_screen">
+		<div class="nav-bar-container">
+			<div class="banner-container">
+				<span class="banner">BANK</span> <span class="banner-second">APP</span>
+			</div>
+			<div class="nav-left-content">
+				<a href="#/login">
+					<lyte-button lt-prop-size="large" lt-prop-type="submit" lt-prop-color="white"
+						lt-prop-background-color="#101adf" class="welcome-button-container">
+						<template is="registerYield" yield-name="text" class="button-text">
+							SIGN IN
+						</template>
+					</lyte-button>
+				</a>
+			</div>
+		</div>
+		<div class="login-screnn-content">
+			<div class="content-texts">
+				<h1 style="text-align: center;" class="welcome-header-first">Simple. Transparent. Secure</h1>
+				<h1 style="text-align: center;" class="welcome-header-second">Banking Solutions</h1>
+				<!-- <h2>Products and services designed to help you reach your financial goals.</h2> -->
+				<div class="sample-button-container">
+						<a href="#/login">
+							<lyte-button lt-prop-size="large" lt-prop-type="submit" lt-prop-color="white"
+								lt-prop-background-color="#101adf" class="welcome-button-container">
+								<template is="registerYield" yield-name="text" class="button-text">
+									SIGN IN
+								</template>
+							</lyte-button>
+						</a>
+				</div>
+			</div>
+			<div class="content-image">
+				<img class="welcome-img" src="https://pixner.net/bankio/assets/images/banner-bg.png" alt="" srcset="" height="80%" width="100%" >
+			</div>
+		</div>
+		
+	</div>
+</template>
+
+
+<!-- <a href="#/user-type">
+				<lyte-button lt-prop-size="large" lt-prop-type="submit" lt-prop-color="black"
+					lt-prop-background-color="#969ca1" class="welcome-button-container">
+					<template is="registerYield" yield-name="text">
+						SIGN UP
+					</template>
+				</lyte-button>
+			</a> -->

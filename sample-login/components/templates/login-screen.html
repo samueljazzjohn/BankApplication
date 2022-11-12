@@ -1,0 +1,63 @@
+<template tag-name="login-screen">
+    <lyte-messagebox id="msg" lt-prop-duration-="1000"></lyte-messagebox>
+    <lyte-alert id="alert"  lt-prop-type="error" lt-prop-heading = "" lt-prop-wrapper-class = "sampleAlert" lt-prop-yield = "true">
+        <template is = "registerYield" yield-name = "alert">
+            <lyte-alert-content>
+                Enter a valid username and passowrd
+            </lyte-alert-content>
+        </template>
+    </lyte-alert>
+    <div class="login-screen-container">
+        <div class="login-image">
+            <img src="https://pixner.net/bankio/assets/images/apps.png" alt="" width="80%" height="80%">
+        </div>
+        <div class="login-container">
+            <h1 class="login-header">LOGIN</h1>
+            <%if(errors.userId){%>
+                <span> userId is not valid. Please check. </span>
+                <%}%>
+                    <div>
+                        <form class="form-container" onsubmit="{{action('login',event,this)}}">
+                            <lyte-input name="username" lt-prop-style="border-radius: 5px;" lt-prop-direction='vertical'
+                                lt-prop-placeholder="Enter Email" lt-prop-type='email' lt-prop-value=""
+                                lt-prop-autocomplete='off'> </lyte-input>
+                            <lyte-input name="password" lt-prop-style="border-radius: 5px;" lt-prop-appearance='box'
+                                lt-prop-direction='vertical' lt-prop-placeholder="Enter Password"
+                                lt-prop-type='password' lt-prop-value="" lt-prop-autocomplete='off'> </lyte-input>
+                            <!-- <div class="radio_group">
+                                <lyte-radiobutton lt-prop-type="primary" lt-prop-name="primary" lt-prop-value="CUSTOMER"
+                                lt-prop-label="Customer"></lyte-radiobutton>
+                            <lyte-radiobutton lt-prop-type="primary" lt-prop-name="primary" lt-prop-value="STAFF"
+                                lt-prop-label="Staff"></lyte-radiobutton>
+                            </div> -->
+                                
+                                <lyte-button lt-prop-size="large" lt-prop-type="submit" lt-prop-color="white"
+                                    lt-prop-background-color="#6a6abf" class="welcome-button-container">
+                                    <template is="registerYield" yield-name="text" class="button-text">
+                                        SIGN IN
+                                    </template>
+                                </lyte-button>
+                        </form>
+
+                    </div>
+        </div>
+    </div>
+</template>
+
+<!-- 
+lyte-dropdown<tr>
+    <td class="pB10 pR30 alignRight"> Clone profile </td>
+    <td class="pB10 mymodaldropdown">
+        <lyte-dropdown lt-prop-freeze="false" lt-prop-tabindex="2">
+            <template is="registerYield" yield-name="yield">
+                <lyte-drop-box>
+                    <span class="lyteArrow"> </span>
+                    <lyte-drop-body>
+                        <lyte-drop-item data-value="0"> Administrator </lyte-drop-item>
+                        <lyte-drop-item data-value="1"> Standard </lyte-drop-item>
+                    </lyte-drop-body>
+                </lyte-drop-box>
+            </template>
+        </lyte-dropdown>
+    </td>
+</tr> -->

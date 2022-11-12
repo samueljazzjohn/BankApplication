@@ -1,0 +1,19 @@
+{
+    "name": "sample-login",
+    "version": "1.0.0",
+    "description": "Description for sample-login goes here",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+   
+    "dependencies" : {
+      "@zoho/lyte" : "3.1.0"
+    },
+    "devDependencies" : {
+      "@zoho/lyte-cli": "3.0.0"
+    }
+  
+}
+  

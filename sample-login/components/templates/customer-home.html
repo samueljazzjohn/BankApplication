@@ -1,0 +1,165 @@
+<template tag-name="customer-home">
+	<!-- <lyte-messagebox id="msg" lt-prop-duration-="1000"></lyte-messagebox> -->
+
+    <lyte-modal id="deposite">
+        <template is="registerYield" yield-name="modal">
+            <lyte-modal-header> Amount Deposite </lyte-modal-header>
+
+            <form onsubmit="{{action('deposite',event)}}">
+                <lyte-modal-content>
+                    <table cellpadding="0" cellspacing="0" class="w100per modalTable">
+                        <tbody>
+                            <tr>
+                                <td class="pB10 pR30 alignRight"> Enter Account Number : &nbsp; &nbsp; &nbsp; &nbsp;
+                                </td>
+                                <td class="pB10 mymodalinput">
+                                    <lyte-input name="accountNumber" lt-prop-disabled=true lt-prop-type="number"
+                                        lt-prop-value="{{account[0].accountNumber}}" lt-prop-appearance="box">
+                                    </lyte-input>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="pB10 pR30 alignRight"> Enter Amount : </td>
+                                <td class="pB10 mymodalinput">
+                                    <lyte-input name="amount" lt-prop-type="number" lt-prop-value=""
+                                        lt-prop-appearance="box"> </lyte-input>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </lyte-modal-content>
+                <lyte-modal-footer class="right">
+                    <lyte-button lt-prop-appearance="primary" lt-prop-type="submit">
+                        <template is="registerYield" yield-name="text"> Deposite </template>
+                    </lyte-button>
+                    <lyte-button onclick="{{action('closeDepositeModel')}}">
+                        <template is="registerYield" yield-name="text"> Cancel </template>
+                    </lyte-button>
+                </lyte-modal-footer>
+            </form>
+        </template>
+    </lyte-modal>
+
+    <lyte-modal id="withdraw">
+        <template is="registerYield" yield-name="modal">
+            <lyte-modal-header> Withdrawal </lyte-modal-header>
+
+            <form onsubmit="{{action('withdraw',event)}}">
+                <lyte-modal-content>
+                    <table cellpadding="0" cellspacing="0" class="w100per modalTable">
+                        <tbody>
+                            <tr>
+                                <td class="pB10 pR30 alignRight"> Enter Account Number :&nbsp; &nbsp; &nbsp; &nbsp;
+                                </td>
+                                <td class="pB10 mymodalinput">
+                                    <lyte-input lt-prop-type="number" lt-prop-disabled=true lt-prop-placeholder=""
+                                        lt-prop-value="{{account[0].accountNumber}}" lt-prop-appearance="box">
+                                    </lyte-input>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="pB10 pR30 alignRight"> Enter Amount : </td>
+                                <td class="pB10 mymodalinput">
+                                    <lyte-input lt-prop-type="number" lt-prop-placeholder="" lt-prop-appearance="box">
+                                    </lyte-input>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </lyte-modal-content>
+                <lyte-modal-footer class="right">
+                    <lyte-button lt-prop-appearance="primary" lt-prop-type="submit">
+                        <template is="registerYield" yield-name="text"> Withdraw </template>
+                    </lyte-button>
+                    <lyte-button onclick="{{action('closeWithdrawModel')}}">
+                        <template is="registerYield" yield-name="text"> Cancel </template>
+                    </lyte-button>
+                </lyte-modal-footer>
+            </form>
+        </template>
+    </lyte-modal>
+
+    <div class="lyte-container-fluid home-screen-container">
+        <div class="home-screen-navbar">
+            <div class="left-content">
+                <div class="banner-container">
+                    <span class="banner">BANK</span> <span class="banner-second">APP</span>
+                </div>
+            </div>
+            <div class="right-content">
+                <lyte-button class="logout-button" onclick="{{action('logout',event)}}" lt-prop-size="large"
+                    lt-prop-type="submit" lt-prop-color="white" lt-prop-background-color="#6a6abf"
+                    class="welcome-button-container">
+                    <template is="registerYield" yield-name="text">
+                        Logout
+                    </template>
+                </lyte-button>
+            </div>
+        </div>
+        <!-- <h1>Welcome {{ user[0].customerName }} </h1> -->
+        <div class="customer-page-content">
+            <div class="customer-page-first">
+
+                <div class="account-card">
+                    <div class="first-data">
+                        <div class="first">Main Account</div>
+                        <div class="first">Available Balance</div>
+                    </div>
+                    <div class="second-data">
+                        <div class="second"> BankApp Savings Account </div>
+                        <div class="second"> $ {{ account[0].deposite }} </div>
+                    </div>
+                    <div class="third-data">
+                        <div class="button-group">
+                            <lyte-button onclick="{{action('openDeposite',event)}}" lt-prop-size="large"
+                                lt-prop-type="submit" lt-prop-color="black" lt-prop-background-color="#dedede"
+                                class="welcome-button-container">
+                                <template is="registerYield" yield-name="text">
+                                    Deposite
+                                </template>
+                            </lyte-button>
+                            <lyte-button onclick="{{action('openWithdrawal',event)}}" lt-prop-size="large"
+                                lt-prop-type="submit" lt-prop-color="black" lt-prop-background-color="#dedede"
+                                class="welcome-button-container">
+                                <template is="registerYield" yield-name="text">
+                                    Withdrawal
+                                </template>
+                            </lyte-button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="loan-card">
+                    <div class="loan-header">
+                        Get Best Loans Here
+                    </div>
+                    <div class="loan-button">
+                        <lyte-button onclick="" lt-prop-size="large"
+                                lt-prop-type="submit" lt-prop-color="black" lt-prop-background-color="#dedede"
+                                class="welcome-button-container">
+                                <template is="registerYield" yield-name="text">
+                                    Apply Loan
+                                </template>
+                            </lyte-button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>
+
+
+                    <!-- <div class="account-details">
+                        <div class="account-number">
+                            <span class="line-data">
+                                Account Number : {{account[0].accountNumber}}
+                            </span>
+                        </div>
+                        <div class="deposite">
+                            <span class="line-data">
+                                Account Balance : {{ account[0].deposite }}
+                            </span>
+                        </div>
+                    </div>
+                -->

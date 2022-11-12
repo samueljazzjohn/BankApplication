@@ -1,0 +1,23 @@
+<template tag-name="user-selection-screen">
+    <div class="lyte-container-fluid" id="sample_login_screen">
+		<h1 style="text-align: center;" class="welcome-header">Select the user type to proceed</h1>
+		<div class="sample-button-container">
+			<a href="#/signup">
+				<lyte-button lt-prop-size="large" lt-prop-type="submit" lt-prop-color="black"
+					lt-prop-background-color="#969ca1" class="welcome-button-container">
+					<template is="registerYield" yield-name="text">
+						Staff
+					</template>
+				</lyte-button>
+			</a>
+			<a href="#/customer-signup">
+				<lyte-button lt-prop-size="large" lt-prop-type="submit" lt-prop-color="black"
+					lt-prop-background-color="#969ca1" class="welcome-button-container">
+					<template is="registerYield" yield-name="text" class="button-text">
+						Customer
+					</template>
+				</lyte-button>
+			</a>
+		</div>
+	</div>
+</template>
